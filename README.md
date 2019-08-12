@@ -1,3 +1,38 @@
+# Windows 설치
+ * 기본적으로 윈도우에서 실행은 불가능하지만 시그윈(Cygwin), WSL(Windows Subsystem for Linux) 등을 이용하여 설치 및 실행 가능
+ * 그러나 성능 면에서 해당 방법으로 컴파일 하는 것은 매우 비효율적임
+
+# Linux(Ubuntu) 설치
+ * 설명을 위해 윈도우 10 기능인 WSL 환경에서 설치 및 실행
+ * git을 통해 lascar 코드를 복사함 (https://github.com/Ledger-Donjon/lascar.git)
+   - git clone https://github.com/Ledger-Donjon/lascar.git
+ * setup.py 실행 시키기 위한 모듈 및 패키지 설치 필요
+   - 없으면 다음과 같은 에러 발생
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/01_install_error.PNG?raw=true)
+   - git 설치 : `apt-get install git`
+   - pip 설치 : `apt-get install pip3` 
+   - setuptools 설치 : pip3 install setuptools
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/02_install_pip.PNG?raw=true)
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/03_install_setuptools.PNG?raw=true)
+ * setup.py을 이용하여 설치
+   - `python3 setup.py install --user`
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/04_install_setup.PNG?raw=true)
+ * /docs 에서 `make html` 입력하여 매뉴얼 설치
+   - 설치 중 sphinx-build 에러 시 `pip3 install sphinx` 및 `pip3 install sphinx_rtd_theme` 입력하여 설치
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/05_install_sphinx.PNG?raw=true)
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/06_install_sphinx2.PNG?raw=true)
+ * /docs 에서 `pip3 install -r requirements.txt` 입력하여 패키지 설치
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/07_install%20requirement.PNG?raw=true)
+ * `python3 01-discovering-containers.py`를 실행하여 코드 정상 동작 확인 
+   ![pic](https://github.com/aasdzs/lascar/blob/master/captures/08_test.PNG?raw=true)
+
+* 실제 분석 예제는 추후 작성 예정
+
+---
+
+
+
+
 [![Ledger Logo](images/logo_ledger)](https://www.ledger.com/)&emsp;[![Ledger Logo](images/logo_donjon_l)](https://www.ledger.fr/tag/donjon/)
 
 [![Documentation Status](https://readthedocs.org/projects/lascar/badge/?version=latest)](https://lascar.readthedocs.io/en/latest/?badge=latest)
